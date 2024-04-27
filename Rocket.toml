@@ -1,0 +1,7 @@
+[default]
+template_dir = "resources/templates"
+port = 6880
+
+[default.limits]
+file = "500 MiB"
+data-form = "1000 MiB"

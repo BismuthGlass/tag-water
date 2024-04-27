@@ -1,0 +1,8 @@
+<nav class="top-menu">
+    <ul>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/upload">Upload</a></li>
+        <li><a href="/tags">Tags</a></li>
+        <li><a href="#">Control Panel</a></li>
+    </ul>
+</nav>

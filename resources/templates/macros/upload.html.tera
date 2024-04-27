@@ -1,0 +1,9 @@
+{% macro card(file_info) %}
+    <div hx-target="this" hx-swap="outerHTML">
+        <div class="card">
+            <div class="remove" hx-delete="/upload/{{file_info.id}}">X</div>
+            <img src="/upload/thumb/{{file_info.id}}">
+            <p>{{ file_info.title }}</p>
+        </div>
+    </div>
+{% endmacro %}

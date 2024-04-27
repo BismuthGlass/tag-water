@@ -1,0 +1,15 @@
+{% extends "base" %}
+
+{% block side_panel %}
+    
+{% endblock side_panel %}
+
+{% block content %}
+    <div class="gallery">
+        {% for entry in entries | default(value=[]) %}
+        <div>
+            <img src="/thumb/{{entry.id}}">
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

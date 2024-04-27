@@ -1,0 +1,5 @@
+{% import "macros/upload" as macros %}
+
+{% for file in uploads %}
+    {{ macros::card(file_info=file) }}
+{% endfor %}

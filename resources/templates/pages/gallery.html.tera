@@ -1,0 +1,63 @@
+{% extends "base" %}
+
+{% block header %}
+    <link rel="stylesheet" href="/static/css/gallery.css">
+
+    {% set query = query | default(value="") %}
+{% endblock header %}
+
+{% block left_panel %}
+    <form 
+    hx-get="gallery"
+    hx-select="#layout-content"
+    hx-target="#layout-content"
+    hx-swap="outerHTML">
+        <input name="query" value="{{query}}">
+        <input type="submit" value="Submit">
+    </form>
+    
+{% endblock left_panel %}
+
+{% block content %}
+    
+    {% if error %}
+    <div class="error">
+        {% for err_line in error %}
+        <p>{{err_line}}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if data %}
+    <div class="gallery">
+        {% for entry in data.page_entries | default(value=[]) %}
+        <div>
+            <div class="card">
+                <img src="/thumb/{{entry.img_id}}">
+                <p>{{ entry.id }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="page-selector">
+        {% if data.page > 1 %}
+        <span class="page-navigation"
+            hx-get="gallery?query={{query | urlencode}}&page={{data.page - 1}}"
+            hx-select="#layout-content"
+            hx-target="#layout-content"
+            hx-swap="outerHTML"
+        ><</span>
+        {% endif %}
+        
+        <span class="page-number">{{data.page}}</span>
+        {% if data.page < data.page_count %}
+        <span class="page-navigation"
+            hx-get="gallery?query={{query | urlencode}}&page={{data.page + 1}}"
+            hx-select="#layout-content"
+            hx-target="#layout-content"
+            hx-swap="outerHTML"
+        >></span>
+        {% endif %}
+    </div>
+    {% endif %}
+{% endblock content %}

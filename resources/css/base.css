@@ -1,0 +1,112 @@
+html, body {
+    height: 100%;
+    background-color: gray;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* HTML Components */
+
+button.link {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
+}
+
+div.separator {
+    height: 1px;
+    width: 100%;
+}
+
+
+/* Menu */
+
+.top-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: darkred;
+}
+
+.top-menu li {
+    padding: 10px;
+}
+
+.top-menu li:last-child {
+    position: absolute;
+    right: 0;
+}
+
+.top-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Side panel */
+
+.side-panel a {
+    color: white;
+    text-decoration: none;
+}
+
+.side-panel .separator {
+    background-color: darkblue;
+    margin: 20px 0px;
+}
+
+
+/* Layout */
+
+#layout-bottom {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+#layout-bottom > div:first-child {
+    width: 200px;
+    background-color: cornflowerblue;
+    color: white;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#layout-bottom > div:last-child {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+#layout-bottom > div:last-child > .inner {
+    height: 100%;
+    padding: 20px;
+    overflow: scroll;
+}
+
+/* .bottom > div:last-child > .bottom-drawer {
+    height: 200px;
+    background-color: brown;
+    flex-shrink: 0;
+}
+
+.bottom > div:last-child > .bottom-drawer.hidden {
+    display: none;
+} */

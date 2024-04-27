@@ -1,0 +1,44 @@
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.gallery .card {
+    position: relative;
+    border: 1px solid black;
+    width: 150px;
+    margin: auto;
+    overflow: hidden;
+}
+.gallery img {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+.gallery p {
+    width: 150px;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 0;
+}
+.gallery .remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.page-selector {
+    text-align: center;
+}
+
+.page-navigation {
+    color: darkblue;
+    cursor: pointer;
+}
+
+
+form > * {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+        <link rel="stylesheet" href="/resource/css/upload.css">
+        <link rel="stylesheet" href="/resource/css/tags.css">
+    </head>
+
+    <body>
+        <div class="top-menu"></div>
+        <div class="main-body">
+            <div class="tab-tags">
+                <div class="new-tag">
+                    <form
+                        hx-post="/tag/new"
+                        hx-swap="outerHTML"
+                    >
+                        <div class="form__grid">
+                            <label>Tag:</label>
+                            <label>Group:</label>
+                            <input type="text" name="name">
+                            <input type="text" name="group">
+                            <input type="submit" value="Add">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

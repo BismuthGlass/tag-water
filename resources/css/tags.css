@@ -1,0 +1,6 @@
+.form__grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 1em;
+    row-gap: 0.5em;
+}

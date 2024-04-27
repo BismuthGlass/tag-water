@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+        <link rel="stylesheet" href="/static/css/base.css">
+        <script src="/static/js/base.js"></script>
+        {% block header %}{% endblock header %}
+    </head>
+    <body>
+        {% include "top_menu" %}
+        <div id="layout-bottom">
+            <div id="layout-left-panel">
+                {% block left_panel %}{% endblock left_panel %}
+            </div>
+            <div id="layout-content">
+                <div class="inner">
+                    {% block content %}{% endblock content %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

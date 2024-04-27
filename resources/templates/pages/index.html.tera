@@ -1,0 +1,10 @@
+{% extends "base" %}
+
+{% block content %}
+    <h1>Index!</h1>
+    <form enctype="multipart/form-data" hx-post="/upload/temp" hx-target="body">
+        <input type="file" name="files">
+        <input type="file" name="files">
+        <input type="submit" value="submit">
+    </form>
+{% endblock content %}

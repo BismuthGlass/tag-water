@@ -1,0 +1,20 @@
+{% if not name %} {% set name = "" %} {% endif %}
+{% if not group %} {% set group = "" %} {% endif %}
+
+<form
+    hx-post="/tag/new"
+>
+    <div class="form__grid">
+        <label>Tag:</label>
+        <label>Group:</label>
+        <input type="text" name="name" value="{{name}}">
+        <input type="text" name="group" value="{{group}}">
+        <input type="submit" value="Add">
+    </div>
+    
+    {% if message %}
+    <div class="form__message">
+        {{ message }}
+    </div>
+    {% endif %}
+</form>

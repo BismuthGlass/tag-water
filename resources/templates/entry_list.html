@@ -1,0 +1,11 @@
+{% macro gallery_item(entry) %}
+    <div class="item">
+        <img src="/thumbnail/{{ entry.file }}">
+    </div>
+{% endmacro gallery_item %}
+
+<div class="gallery-view">
+    {% for item in items %}
+        {{ self::gallery_item(entry=item) }}
+    {% endfor %}
+</div>

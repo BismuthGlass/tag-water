@@ -1,0 +1,44 @@
+{% import "macros/upload" as macros %}
+
+{% extends "base" %}
+
+{% block header %}
+    <link rel="stylesheet" href="/static/css/upload.css">
+    <script src="/static/js/upload.js"></script>
+{% endblock header %}
+
+{% block side_panel %}
+    <input 
+        type="file" 
+        id="file-upload-input" 
+        name="files" 
+        multiple
+        hx-post="/upload"
+        hx-trigger="change"
+        hx-encoding='multipart/form-data'
+        hx-on::after-request="this.value = ''"
+        hx-target=".upload-list"
+        hx-swap="beforeend">
+
+    <button class="link" onclick="open_files()">Upload</button>
+
+    <div class="separator"></div>
+
+    <button class="link" onclick="toggle_drawer()">Script Editor</button>
+{% endblock side_panel %}
+
+{% block content %}
+    <div class="upload-list-frame">
+        <div class="upload-list">
+            {% for file in uploads %}
+                {{ macros::card(file_info=file) }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+
+{% block bottom_drawer %}
+    <div class="editor">
+        <textarea>{{ script | default(value="") }}</textarea>
+    </div>
+{% endblock bottom_drawer %}
